@@ -14,7 +14,7 @@ CREATE TABLE pet(
     id_pet INT AUTO_INCREMENT primary key,
     nome VARCHAR (100) NOT NULL,
     porte VARCHAR (100) NOT NULL,
-    especie VARCHAR (100) NOT NULL,
+    especie ENUM ('poddle, pitbull, rottweiler, pastor alemão') NOT NULL,
     nascimento DATE NOT NULL,
     id_atendente int,
     id_agendamento int,
@@ -26,7 +26,7 @@ CREATE TABLE pet(
 CREATE TABLE agendamento(
     id_agendamento INT AUTO_INCREMENT primary key,
     data_hora DATE NOT NULL,
-    status VARCHAR(100),
+    status ENUM VARCHAR(100),
     observacoes VARCHAR(100),
     id_servico int,
     FOREIGN KEY CONSTRAINT (id_servico) REFERENCES servico(id)
